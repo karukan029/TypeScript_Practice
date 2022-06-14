@@ -62,4 +62,44 @@ const fizzbuzz3 = () => {
   console.log(result);
 }
 
-fizzbuzz3();
+// fizzbuzz3();
+
+function getFizzBuzzString(num: number): number | "FizzBuzz" | "Fizz" | "Buzz" {
+  if (num % 3 === 0 && num % 5 === 0) {
+    return "FizzBuzz";
+  } else if (num % 3 === 0) {
+    return "Fizz";
+  } else if (num % 5 === 0) {
+    return "Buzz";
+  } else {
+    return num;
+  } 
+}
+
+const fizzbuzz4 = () => {
+  for (let i = 1; i <= 100; i++) {
+    const message = getFizzBuzzString(i);
+    console.log(message);
+  }
+}
+
+// fizzbuzz4();
+
+function sequence(startNum: number, endNum: number): number[] {
+  const numArray: number[] = [];
+  
+  for (let i = startNum; i <= endNum; i++) {
+    numArray.push(i);
+  }
+
+  return numArray;
+}
+
+const fizzbuzz5 = () => {
+  for (const i of sequence(1, 100)) {
+    const message = getFizzBuzzString(i);
+    console.log(message);
+  }
+}
+
+fizzbuzz5();
